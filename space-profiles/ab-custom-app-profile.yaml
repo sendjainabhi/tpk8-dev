@@ -1,0 +1,145 @@
+apiVersion: spaces.tanzu.vmware.com/v1alpha1
+kind: Profile
+metadata:
+  annotations:
+    spaces.tanzu.vmware.com/referenced: '[{"name":"pve-abhi"}]'
+  creationTimestamp: 2024-10-22T18:22:42Z
+  generation: 1
+  labels:
+    claimed.internal.apis.kcp.io/aOuI8lyhor98ztHbtGC06vj87C7gOeqePKga9c: 2Cr70BPqHj6tKMKtq6CZbwWEcnPgNllwSjVbT8
+  managedFields:
+    - apiVersion: spaces.tanzu.vmware.com/v1alpha1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec:
+          .: {}
+          f:description: {}
+          f:requiredCapabilities: {}
+          f:traits: {}
+      manager: ucp
+      operation: Update
+      time: 2024-10-22T18:22:42Z
+    - apiVersion: spaces.tanzu.vmware.com/v1alpha1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:conditions: {}
+          f:requiredCapabilities: {}
+          f:traits: {}
+          f:valuesSchema:
+            .: {}
+            f:openAPIv3:
+              .: {}
+              f:additionalProperties: {}
+              f:properties:
+                .: {}
+                f:carvel-package-installer.tanzu.vmware.com:
+                  .: {}
+                  f:additionalProperties: {}
+                  f:properties:
+                    .: {}
+                    f:carvel-package-installer:
+                      .: {}
+                      f:additionalProperties: {}
+                      f:properties:
+                        .: {}
+                        f:serviceAccountName:
+                          .: {}
+                          f:default: {}
+                          f:description: {}
+                          f:minLength: {}
+                          f:title: {}
+                          f:type: {}
+                      f:type: {}
+                  f:type: {}
+              f:type: {}
+      manager: ucp-runtime-controllers
+      operation: Update
+      subresource: status
+      time: 2024-10-22T18:22:42Z
+    - apiVersion: spaces.tanzu.vmware.com/v1alpha1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:spaces.tanzu.vmware.com/referenced: {}
+      manager: ucp-runtime-controllers
+      operation: Update
+      time: 2024-10-22T18:23:28Z
+  name: ab-custom-app-profile
+  namespace: default
+  resourceVersion: "113207474"
+  uid: 2bf96ffe-e84d-4890-905e-71b6b3f01ca6
+spec:
+  description: Abhishek PVE custum profile for app
+  requiredCapabilities:
+    - name: mtls.tanzu.vmware.com
+    - name: bitnami.services.tanzu.vmware.com
+    - name: ingress.tanzu.vmware.com
+    - name: egress.tanzu.vmware.com
+    - name: servicebinding.tanzu.vmware.com
+    - name: tanzu-servicebinding.tanzu.vmware.com
+    - name: container-app.tanzu.vmware.com
+    - name: observability.tanzu.vmware.com
+    - name: package-management.tanzu.vmware.com
+    - name: k8sgateway.tanzu.vmware.com
+    - name: servicemesh-observability.tanzu.vmware.com
+    - name: health.spaces.tanzu.vmware.com
+  traits:
+    - alias: carvel-package-installer.tanzu.vmware.com
+      name: carvel-package-installer.tanzu.vmware.com
+      values:
+        inline:
+          carvel-package-installer:
+            serviceAccountName: carvel-package-installer
+status:
+  conditions:
+    - lastTransitionTime: 2024-10-22T18:22:42Z
+      message: Resolved
+      reason: Resolved
+      status: "True"
+      type: TraitsResolved
+    - lastTransitionTime: 2024-10-22T18:22:42Z
+      message: Ready
+      reason: Completed
+      status: "True"
+      type: Ready
+  requiredCapabilities:
+    - name: bitnami.services.tanzu.vmware.com
+    - name: egress.tanzu.vmware.com
+    - name: container-app.tanzu.vmware.com
+    - name: k8sgateway.tanzu.vmware.com
+    - name: servicemesh-observability.tanzu.vmware.com
+    - name: health.spaces.tanzu.vmware.com
+    - name: mtls.tanzu.vmware.com
+    - name: ingress.tanzu.vmware.com
+    - name: servicebinding.tanzu.vmware.com
+    - name: tanzu-servicebinding.tanzu.vmware.com
+    - name: observability.tanzu.vmware.com
+    - name: package-management.tanzu.vmware.com
+  traits:
+    - alias: carvel-package-installer.tanzu.vmware.com
+      name: carvel-package-installer.tanzu.vmware.com
+      state: Resolved
+  valuesSchema:
+    openAPIv3:
+      additionalProperties: false
+      properties:
+        carvel-package-installer.tanzu.vmware.com:
+          additionalProperties: false
+          properties:
+            carvel-package-installer:
+              additionalProperties: false
+              properties:
+                serviceAccountName:
+                  default: carvel-package-installer
+                  description: Name of the ServiceAccount used to install the contents of the
+                    ContainerApp package. It contains sufficient permissions to
+                    create the direct content of the package.
+                  minLength: 1
+                  title: Service Account Name
+                  type: string
+              type: object
+          type: object
+      type: object
